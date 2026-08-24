@@ -1,0 +1,180 @@
+/* =========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   BODY & TYPOGRAPHY (Mobile Optimized)
+   ========================================= */
+body {
+  /* Times New Roman with fallbacks for devices that might not have it */
+  font-family: 'Times New Roman', Times, serif;
+
+  /* 18px is the ideal size for mobile reading */
+  font-size: 18px;
+
+  /* 1.8 line-height gives serif fonts breathing room on small screens */
+  line-height: 1.8;
+
+  /* Slight letter spacing helps serif fonts on mobile */
+  letter-spacing: 0.02em;
+
+  /* Soft contrast colors to reduce eye strain on mobile */
+  color: #2c2c2c;
+  background-color: #fdfdfd;
+
+  /* Padding for mobile screens */
+  padding: 20px;
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   CONTENT CONTAINER
+   ========================================= */
+.container {
+  /* Prevents lines from being too long on large phones/tablets */
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.4em;
+  margin-top: 24px;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #444;
+}
+
+/* =========================================
+   PARAGRAPHS & TEXT
+   ========================================= */
+p {
+  margin-bottom: 1.2em;
+  text-align: justify; /* Gives a clean book-like look */
+  text-justify: inter-word;
+}
+
+/* Subtitle / Author / Date styling */
+.subtitle,
+.meta-info {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* =========================================
+   LISTS (For the "Manga Ala-i" sections)
+   ========================================= */
+ol,
+ul {
+  margin-bottom: 1.5em;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+/* Make list markers slightly softer */
+li::marker {
+  color: #888;
+}
+
+/* =========================================
+   LINKS (If you add navigation later)
+   ========================================= */
+a {
+  color: #0056b3;
+  text-decoration: none;
+  border-bottom: 1px dashed #0056b3;
+}
+
+a:hover {
+  color: #003d82;
+  border-bottom-style: solid;
+}
+
+/* =========================================
+   NAVIGATION (Optional: To jump between pages)
+   ========================================= */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9em;
+}
+
+.page-nav a {
+  background: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border-bottom: none;
+}
+
+.page-nav a:hover {
+  background: #e0e0e0;
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================= */
+/* For very small mobile screens */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 17px;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  p {
+    text-align: left; /* Left align is easier to read on very narrow screens */
+  }
+}
+
+/* For larger screens (tablets/desktops) */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 19px;
+  }
+}
