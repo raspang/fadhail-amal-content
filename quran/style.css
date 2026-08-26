@@ -1,0 +1,286 @@
+/* =========================================
+   CSS Variables for Easy Theming
+   ========================================= */
+:root {
+  --bg-color: #fcfbf9; /* Soft paper-like background (easy on eyes) */
+  --text-color: #2c2c2c; /* Soft black for reduced eye strain */
+  --heading-color: #1a3b26; /* Deep Islamic green */
+  --accent-color: #8b0000; /* Deep red for Hadith titles */
+  --verse-bg: #f4f1ea; /* Slightly darker paper for Quranic verses */
+  --border-color: #e0dcd5;
+  --font-main: 'Times New Roman', Times, Georgia, serif;
+}
+
+/* =========================================
+   Base & Typography (Mobile First)
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base size for mobile */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.8; /* Crucial for Times New Roman readability */
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   Layout & Containers
+   ========================================= */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header,
+main,
+footer {
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   Headings
+   ========================================= */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-main);
+  color: var(--heading-color);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  border-bottom: 2px solid var(--heading-color);
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  border-left: 5px solid var(--accent-color);
+  padding-left: 0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--accent-color);
+  margin-top: 1.5rem;
+}
+
+/* =========================================
+   Table of Contents (TOC)
+   ========================================= */
+.toc-container {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.toc-container summary {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--heading-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  list-style: none;
+}
+
+.toc-container summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-container summary::before {
+  content: '📖 ';
+}
+
+.toc-list {
+  list-style-type: none;
+  margin-top: 1rem;
+  max-height: 60vh;
+  overflow-y: auto; /* Scrollable TOC on mobile */
+  padding-right: 0.5rem;
+}
+
+.toc-list li {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.toc-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toc-list a:hover {
+  color: var(--accent-color);
+}
+
+/* =========================================
+   Content Elements
+   ========================================= */
+p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Honorifics (e.g., Sallallaho ‘Alaihi Wasallam) */
+.honorific {
+  font-size: 0.9em;
+  color: #555;
+  font-style: italic;
+}
+
+/* Quranic Verses / Translations */
+.verse,
+blockquote {
+  background-color: var(--verse-bg);
+  border-left: 4px solid var(--heading-color);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+.verse cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+/* Hadith Blocks */
+.hadith-block {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+div.paragraph {
+}
+
+.font0,
+.font1,
+.font2,
+.font3,
+.font4,
+.font5,
+.font6,
+.font7,
+.font8,
+.font9,
+.font10,
+.font11,
+.font12,
+.font13,
+.font14 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+}
+
+.font15,
+.font16 {
+  font-family: 'Times New Roman', Times, serif;
+}
+.font15 {
+  font-size: 2.2rem;
+}
+.font16 {
+  font-size: 3.2rem;
+}
+
+/* =========================================
+   Responsive Breakpoints (Tablet & Desktop)
+   ========================================= */
+@media (min-width: 768px) {
+  html {
+    font-size: 18px; /* Slightly larger for tablets */
+  }
+
+  body {
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 750px; /* Optimal line length for reading */
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .hadith-block {
+    padding: 2rem;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto; /* Centers horizontally and adds vertical spacing */
+}
+
+img.inline-img {
+  display: inline;
+  margin: 0;
+  vertical-align: middle; /* or use 'text-bottom' or 'baseline' depending on the image */
+  max-width: 100%;
+  height: 1.2em; /* Forces the image to be roughly the same height as the text */
+  width: auto;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 19px;
+  }
+
+  .container {
+    max-width: 800px;
+  }
+}
+
+/* =========================================
+   Print Styles (For PDF generation)
+   ========================================= */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+  .toc-container {
+    page-break-after: always;
+  }
+  .hadith-block {
+    border: none;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+}
